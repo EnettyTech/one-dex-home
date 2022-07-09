@@ -12,11 +12,20 @@ export default function Header() {
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div>
-          <h1 className="extraBold font60">Disruptively Innovative Decentralized Exchange for Everyone</h1>
+          <h1 className="extraBold font30">Be up-to-date and track your favorite cryptocurrency's movement with OneDex. Designed for beginners and built for experts</h1>
           <HeaderP className="font13 semiBold">
-            Buy and sell digital assets anonymously with confidence on our
-            secure platform. We support ERC-20 token and Security token trading.
+          - Easily connect with your favourite exchange.
           </HeaderP>
+          <HeaderP className="font13 semiBold">
+          - Manage all your accounts in one place.
+          </HeaderP>
+          <HeaderP className="font13 semiBold">
+          - Automatically import your trade history.
+          </HeaderP>
+          <HeaderP className="font13 semiBold">
+          - Sell/buy with one click.
+          </HeaderP>
+          <p className="font13 semiBold mb-10">Now available for all cryptocurrencies!</p>
           <BtnWrapper>
             <FullButton title="Get Started" />
           </BtnWrapper>
@@ -83,10 +92,10 @@ const RightSide = styled.div`
 `;
 const HeaderP = styled.div`
   max-width: 470px;
-  padding: 15px 0 50px 0;
+  padding: 5px 0 5px 0;
   line-height: 1.5rem;
   @media (max-width: 960px) {
-    padding: 15px 0 50px 0;
+    padding:5px 0 5px 0;
     text-align: center;
     max-width: 100%;
   }

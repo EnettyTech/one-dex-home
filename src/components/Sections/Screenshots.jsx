@@ -12,41 +12,46 @@ import ProjectImg5 from "../../assets/img/projects/5.png";
 import ProjectImg6 from "../../assets/img/projects/6.png";
 import AddImage2 from "../../assets/img/add/add2.png";
 
-export default function Projects() {
+export default function Screenshots() {
   return (
-    <Wrapper id="projects">
+    <Wrapper id="screenshots">
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Our Awesome Screenshots</h1>
-            {/* <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
-            </p> */}
+            <h1 className="font30 extraBold">
+              All-In-One Crypto and DeFi Asset Management Platform Find Your
+              Edge With OneDex now!
+            </h1>
+            <p className="font13">
+              OneDex is compatible with the most popular cryptocurrency
+              exchanges, including Binance, Coinbase, FTX, and over 200 others.
+            </p>
           </HeaderInfo>
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg1}
-                title="Awesome Chart"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Automated portfolio tracking"
+                text="Real-time access to your market value, investment performance, and portfolio allocation. 
+                We consolidate your transaction history across all crypto services and enable you to search and filter it. 
+                More than 200 exchanges and 10,000+ cryptocurrencies are supported."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg2}
-                title="Easy to manage assets"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Track your crypto portfolio on the go."
+                text="Our mobile app enables users to monitor their portfolio and cryptocurrency prices. 
+                Never lose track of your assets, no matter where you are."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg3}
-                title="Multi alert options"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Manage Alert"
+                text="Crypto in the palm of your hand."
                 action={() => alert("clicked")}
               />
             </div>
@@ -55,8 +60,8 @@ export default function Projects() {
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg4}
-                title="Easy to login/register"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Swift & Safe"
+                text="It takes only a few minutes to sign up for OneDex, which is completely free and secure."
                 action={() => alert("clicked")}
               />
             </div>
@@ -64,15 +69,16 @@ export default function Projects() {
               <ProjectBox
                 img={ProjectImg5}
                 title="Manage notification"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                text="Crypto in the palm of your hand. Easily turn on notifications for price alerts, gas fee alerts, or the whole portfolio hitting $X in value."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg6}
-                title="Fast to buy/sell"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Fast buy/sell"
+                text="Forget about trading pairs! With one click you can trade from one altcoin to another, without 
+                having to trade to Bitcoin or Ethereum first."
                 action={() => alert("clicked")}
               />
             </div>

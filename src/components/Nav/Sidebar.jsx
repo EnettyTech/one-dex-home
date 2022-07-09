@@ -3,19 +3,22 @@ import styled from "styled-components";
 import { Link } from "react-scroll";
 // Assets
 import CloseIcon from "../../assets/svg/CloseIcon";
-import LogoIcon from "../../assets/svg/Logo";
+import { LogoApp } from "../../assets/svg/index";
 
 export default function Sidebar({ sidebarOpen, toggleSidebar }) {
   return (
     <Wrapper className="animate darkBg" sidebarOpen={sidebarOpen}>
       <SidebarHeader className="flexSpaceCenter">
         <div className="flexNullCenter">
-          <LogoIcon />
+          <LogoApp />
           <h1 className="whiteColor font20" style={{ marginLeft: "15px" }}>
             OneDex
           </h1>
         </div>
-        <CloseBtn onClick={() => toggleSidebar(!sidebarOpen)} className="animate pointer">
+        <CloseBtn
+          onClick={() => toggleSidebar(!sidebarOpen)}
+          className="animate pointer"
+        >
           <CloseIcon />
         </CloseBtn>
       </SidebarHeader>
@@ -41,12 +44,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="services"
+            to="getStarted"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Services
+            Get Started
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -55,7 +58,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="projects"
+            to="screenshots"
             spy={true}
             smooth={true}
             offset={-60}
@@ -63,7 +66,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             Screenshots
           </Link>
         </li>
-        <li className="semiBold font15 pointer">
+        {/* <li className="semiBold font15 pointer">
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
             activeClass="active"
@@ -90,7 +93,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           >
             Pricing
           </Link>
-        </li>
+        </li> */}
         <li className="semiBold font15 pointer">
           <Link
             onClick={() => toggleSidebar(!sidebarOpen)}
@@ -113,7 +116,11 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           </a>
         </li> */}
         <li className="semiBold font15 pointer flexCenter">
-          <a href="/" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
+          <a
+            href="/"
+            className="radius8 lightBg"
+            style={{ padding: "10px 15px" }}
+          >
             Get Started
           </a>
         </li>
