@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Button, Modal } from "antd";
 // Components
 import ProjectBox from "../Elements/ProjectBox";
 import FullButton from "../Buttons/FullButton";
@@ -10,9 +11,20 @@ import ProjectImg3 from "../../assets/img/projects/3.png";
 import ProjectImg4 from "../../assets/img/projects/4.png";
 import ProjectImg5 from "../../assets/img/projects/5.png";
 import ProjectImg6 from "../../assets/img/projects/6.png";
-import AddImage2 from "../../assets/img/add/add2.png";
+import FullScreenImage from "../Elements/fullScreenImage";
 
 export default function Screenshots() {
+  const [isFullScreen, setIsFullScreen] = React.useState(false);
+  const [urlImage, setUrlImage] = React.useState(null);
+  const showFullScreenImage = async (url) => {
+    await setUrlImage(url);
+    await setIsFullScreen(true);
+  };
+
+  const onHideModal = async () => {
+    await setIsFullScreen(false);
+  };
+
   return (
     <Wrapper id="screenshots">
       <div className="whiteBg">
@@ -35,16 +47,7 @@ export default function Screenshots() {
                 text="Real-time access to your market value, investment performance, and portfolio allocation. 
                 We consolidate your transaction history across all crypto services and enable you to search and filter it. 
                 More than 200 exchanges and 10,000+ cryptocurrencies are supported."
-                action={() => alert("clicked")}
-              />
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg2}
-                title="Track your crypto portfolio on the go."
-                text="Our mobile app enables users to monitor their portfolio and cryptocurrency prices. 
-                Never lose track of your assets, no matter where you are."
-                action={() => alert("clicked")}
+                action={() => showFullScreenImage(ProjectImg1)}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -52,7 +55,16 @@ export default function Screenshots() {
                 img={ProjectImg3}
                 title="Manage Alert"
                 text="Crypto in the palm of your hand."
-                action={() => alert("clicked")}
+                action={() => showFullScreenImage(ProjectImg2)}
+              />
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg6}
+                title="Fast buy/sell"
+                text="Forget about trading pairs! With one click you can trade from one altcoin to another, without 
+                having to trade to Bitcoin or Ethereum first."
+                action={() => showFullScreenImage(ProjectImg3)}
               />
             </div>
           </div>
@@ -62,7 +74,7 @@ export default function Screenshots() {
                 img={ProjectImg4}
                 title="Swift & Safe"
                 text="It takes only a few minutes to sign up for OneDex, which is completely free and secure."
-                action={() => alert("clicked")}
+                action={() => showFullScreenImage(ProjectImg4)}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -70,19 +82,24 @@ export default function Screenshots() {
                 img={ProjectImg5}
                 title="Manage notification"
                 text="Crypto in the palm of your hand. Easily turn on notifications for price alerts, gas fee alerts, or the whole portfolio hitting $X in value."
-                action={() => alert("clicked")}
+                action={() => showFullScreenImage(ProjectImg5)}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
-                img={ProjectImg6}
-                title="Fast buy/sell"
-                text="Forget about trading pairs! With one click you can trade from one altcoin to another, without 
-                having to trade to Bitcoin or Ethereum first."
-                action={() => alert("clicked")}
+                img={ProjectImg2}
+                title="Track your crypto portfolio on the go."
+                text="Our mobile app enables users to monitor their portfolio and cryptocurrency prices. 
+                Never lose track of your assets, no matter where you are."
+                action={() => showFullScreenImage(ProjectImg6)}
               />
             </div>
           </div>
+          <FullScreenImage
+            isShowing={isFullScreen}
+            url={urlImage}
+            hide={onHideModal}
+          />
           <div className="row flexCenter">
             <div style={{ margin: "50px 0", width: "200px" }}>
               <FullButton title="Load More" action={() => alert("clicked")} />
