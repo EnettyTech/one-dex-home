@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { Link as Link1 } from "react-router-dom";
 // Assets
 import { LogoApp, ToTop } from "../../assets/svg";
 
@@ -31,11 +32,26 @@ export default function Contact() {
                 OneDex
               </h1>
             </Link>
-            <StyleP className="whiteColor font13">
-              © {getCurrentYear()} -{" "}
-              <span className="purpleColor font13">OneDex</span> All Right
-              Reserved
-            </StyleP>
+            <div>
+              <div>
+                <Link1
+                  to={"/privacy-policy"}
+                  style={{ color: "white", marginBottom: 10 }}
+                >
+                  <StyleP className="font13 font-bold">Privacy policy</StyleP>
+                </Link1>
+                <Link1 to={"/term-conditions"} style={{ color: "white" }}>
+                  <StyleP className="font13 font-bold">
+                    Terms & conditions
+                  </StyleP>
+                </Link1>
+              </div>
+              <StyleP className="whiteColor font13">
+                © {getCurrentYear()} -{" "}
+                <span className="purpleColor font13">OneDex</span> All Right
+                Reserved
+              </StyleP>
+            </div>
 
             <Link
               className="whiteColor animate pointer font13"

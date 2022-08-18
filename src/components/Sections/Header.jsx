@@ -1,67 +1,64 @@
 import React from "react";
 import styled from "styled-components";
-// Components
-import FullButton from "../Buttons/FullButton";
 // Assets
 import HeaderImage from "../../assets/img/header-img.png";
-import QuotesIcon from "../../assets/svg/Quotes";
 import Dots from "../../assets/svg/Dots";
+import { Element } from "react-scroll";
+import { AppStoreDownload, GooglePlayDownload } from "../../assets/svg";
 
 export default function Header() {
   return (
-    <Wrapper id="home" className="container flexSpaceCenter">
-      <LeftSide className="flexCenter">
-        <div>
-          <h1 className="extraBold font30">
-            Be up-to-date and track your favorite cryptocurrency's movement with
-            OneDex. Designed for beginners and built for experts
-          </h1>
-          <HeaderP className="font13 semiBold">
-            - Easily connect with your favourite exchange.
-          </HeaderP>
-          <HeaderP className="font13 semiBold">
-            - Manage all your accounts in one place.
-          </HeaderP>
-          <HeaderP className="font13 semiBold">
-            - Automatically import your trade history.
-          </HeaderP>
-          <HeaderP className="font13 semiBold">
-            - Sell/buy with one click.
-          </HeaderP>
-          <p className="font13 semiBold mb-10">
-            Now available for all cryptocurrencies!
-          </p>
-          <BtnWrapper>
-            <FullButton title="Get Started" />
-          </BtnWrapper>
-        </div>
-      </LeftSide>
-      <RightSide>
-        <ImageWrapper>
-          <Img
-            className="radius8"
-            src={HeaderImage}
-            alt="office"
-            style={{ zIndex: 9, height: 680, width: 330 }}
-          />
-          {/* <QuoteWrapper className="flexCenter darkBg radius8">
-            <QuotesWrapper>
-              <QuotesIcon />
-            </QuotesWrapper>
-            <div>
-              <p className="font15 whiteColor">
-                <em>Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.</em>
-              </p>
-              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Ralph Waldo Emerson</p>
-            </div>
-          </QuoteWrapper> */}
-          <DotsWrapper>
-            <Dots />
-          </DotsWrapper>
-        </ImageWrapper>
-        <GreyDiv className="lightBg"></GreyDiv>
-      </RightSide>
-    </Wrapper>
+    <Element name="home">
+      <Wrapper id="home" className="container flexSpaceCenter">
+        <LeftSide className="flexCenter">
+          <div>
+            <h1 className="extraBold font30">
+              Be up-to-date and track your favorite cryptocurrency's movement
+              with OneDex. Designed for beginners and built for experts
+            </h1>
+            <HeaderP className="font13 semiBold">
+              - Easily connect with your favourite exchange.
+            </HeaderP>
+            <HeaderP className="font13 semiBold">
+              - Manage all your accounts in one place.
+            </HeaderP>
+            <HeaderP className="font13 semiBold">
+              - Automatically import your trade history.
+            </HeaderP>
+            <HeaderP className="font13 semiBold">
+              - Sell/buy with one click.
+            </HeaderP>
+            <p className="font13 semiBold mb-10">
+              Now available for all cryptocurrencies!
+            </p>
+            <BtnWrapper>
+              <div className="flex flex-row justify-between items-center ">
+                <a href="https://apps.apple.com/app/apple-store/id1635732387?mt=8">
+                  <AppStoreDownload />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.launchzone.onedex">
+                  <GooglePlayDownload />
+                </a>
+              </div>
+            </BtnWrapper>
+          </div>
+        </LeftSide>
+        <RightSide>
+          <ImageWrapper>
+            <Img
+              className="radius8"
+              src={HeaderImage}
+              alt="office"
+              style={{ zIndex: 9, height: 680, width: 330 }}
+            />
+            <DotsWrapper>
+              <Dots />
+            </DotsWrapper>
+          </ImageWrapper>
+          <GreyDiv className="lightBg"></GreyDiv>
+        </RightSide>
+      </Wrapper>
+    </Element>
   );
 }
 
@@ -106,7 +103,7 @@ const HeaderP = styled.div`
   }
 `;
 const BtnWrapper = styled.div`
-  max-width: 190px;
+  max-width: 290px;
   @media (max-width: 960px) {
     margin: 0 auto;
   }
@@ -137,25 +134,6 @@ const Img = styled.img`
     width: 80%;
     height: auto;
   }
-`;
-const QuoteWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 50px;
-  max-width: 330px;
-  padding: 30px;
-  z-index: 99;
-  @media (max-width: 960px) {
-    left: 20px;
-  }
-  @media (max-width: 560px) {
-    bottom: -50px;
-  }
-`;
-const QuotesWrapper = styled.div`
-  position: absolute;
-  left: -20px;
-  top: -10px;
 `;
 const DotsWrapper = styled.div`
   position: absolute;
